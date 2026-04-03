@@ -178,3 +178,62 @@
     pointer-events: none;
   }
 }
+
+/* ================= MOBILE OPTIMIZATION ================= */
+@media (max-width: 768px) {
+
+  /* Reduce heading sizes */
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Stack layouts vertically */
+  .flex,
+  .row,
+  .services,
+  .container {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  /* Cards full width */
+  .card {
+    width: 90% !important;
+    margin-bottom: 15px;
+  }
+
+  /* Section padding */
+  .section {
+    padding: 30px 15px;
+  }
+
+  /* Buttons full width */
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Navbar fix */
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+}
