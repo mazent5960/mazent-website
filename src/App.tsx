@@ -1,48 +1,27 @@
-﻿export default function App() {
-  return (
-    <div>
+﻿import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import Index from "./pages/Index.tsx";
+import NotFound from "./pages/NotFound.tsx";
 
-      {/* HERO */}
-      <section className="section hero">
-        <h1>Grow Your Business with AI Websites ??</h1>
-        <p>We build high-converting websites for Shops, Gyms & Restaurants</p>
-        <button className="btn">Get Your Website</button>
-      </section>
+const queryClient = new QueryClient();
 
-      {/* TRUST */}
-      <section className="section">
-        <p>? 24–48 Hour Delivery</p>
-        <p>? Affordable Pricing</p>
-        <p>? Mobile Optimized</p>
-      </section>
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
-      {/* SERVICES */}
-      <section className="section services">
-        <div className="card">Shops ??</div>
-        <div className="card">Gyms ??</div>
-        <div className="card">Restaurants ???</div>
-      </section>
-
-      {/* PORTFOLIO */}
-      <section className="section">
-        <h2>Our Work</h2>
-        <div className="card">Sama Groups</div>
-        <div className="card">Cafe Website</div>
-      </section>
-
-      {/* CTA */}
-      <section className="section">
-        <h2>Ready to Grow Your Business?</h2>
-        <a
-          href="https://wa.me/91YOURNUMBER"
-          target="_blank"
-          className="btn"
-        >
-          Chat on WhatsApp
-        </a>
-      </section>
-
-    </div>
-  );
-}
-
+export default App;
