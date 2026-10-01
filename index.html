@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mazent — Websites That Bring You Customers</title>
+    <meta name="description" content="Mazent builds fast, mobile-friendly websites for restaurants, clinics, salons, shops and coaching centres. 7-day delivery, free revisions. Get a free quote." />
+    <meta name="author" content="Mazent" />
+    <meta property="og:site_name" content="Mazent" />
+    <meta property="og:title" content="Mazent — Websites That Bring You Customers" />
+    <meta property="og:description" content="Fast, mobile-friendly websites for local businesses. 7-day delivery, free revisions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=75" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+    <script>
+      (function () {
+        try {
+          var d = document.documentElement;
+          if (localStorage.getItem("theme") === "dark") d.classList.add("dark");
+          if (sessionStorage.getItem("mazent-welcome-seen")) d.classList.add("splash-seen");
+          else { sessionStorage.setItem("mazent-welcome-seen", "1"); d.classList.add("splash-lock"); }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
